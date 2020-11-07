@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/baseball.css">
+  <title>じゃんけん野球</title>
+</head>
+
+<body>
+  <header>
+    <h1>野球ゲーム！</h1>
+    <h2>ホームランをかっ飛ばそう！！</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="batter_btn">バットを振る</li>
+    </ul>
+    <div id="comp" class="pitcher"></div>
+    <div id="judgment" class="score"></div>
+  </main>
+
+  <!-- <footer>フッター</footer> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    /* スコア */
+    $('#batter_btn').on('click', function () {
+        const randomNumber = Math.floor(Math.random() * 100);
+        if (randomNumber <= 60) {
+          $('#judgment').html('空振り！');
+        } else if (randomNumber <= 80) {
+          $('#judgment').html('シングルヒット！');
+        } else if (randomNumber <= 90) {
+          $('#judgment').html('ツーベース！');
+        } else if (randomNumber <= 95) {
+          $('#judgment').html('スリーベース！');
+        } else if (randomNumber <= 100) {
+          $('#judgment').html('ホームラン！！');
+        } else {
+          console.log("エラー");
+        }
+      });
+
+  </script>
+
+</body>
+
+</html>
